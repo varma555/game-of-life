@@ -12,7 +12,7 @@ stages {
 
       // Get some code from a GitHub repository
 
-      git 'https://github.com/raknas999/game-of-life.git'
+     git 'https://github.com/varma555/game-of-life.git'
 
       // Get the Maven tool.
      
