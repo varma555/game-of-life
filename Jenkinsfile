@@ -27,7 +27,7 @@ stages {
        // Run the maven build
 
       //if (isUnix()) {
-     sh label: '', script: 'install'
+     sh label: '', script: 'clean package'
       //} 
       //else {
       //   bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
