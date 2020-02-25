@@ -53,11 +53,11 @@ stages {
           waitForQualityGate abortPipeline: true
         }
     }
-}
+}nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'devops', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'gameoflife', groupId: 'com.wakaleo.gameoflife', packaging: 'war', version: '$BUILD_ID']]]
 
     stage('Artifact upload') {
       steps {
-       nexusArtifactUploader credentialsId: '', groupId: 'devops', nexusUrl: 'http://13.127.195.17:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'devops', version: '$BUILD_ID'
+       
      }
      }
    stage('Deploy War') {
