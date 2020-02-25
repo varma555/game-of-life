@@ -57,7 +57,7 @@ stages {
 
     stage('Artifact upload') {
       steps {
-       nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'gameoflife-web/target/gameoflife.war']], mavenCoordinate: [artifactId: 'gameoflife', groupId: 'com.wakaleo.gameoflife', packaging: 'war', version: '$BUILD_NUMBER']]]
+       nexusArtifactUploader credentialsId: '', groupId: 'devops', nexusUrl: 'http://13.127.195.17:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'devops', version: '$BUILD_ID'
      }
      }
    stage('Deploy War') {
