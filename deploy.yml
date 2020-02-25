@@ -6,21 +6,21 @@
     service: name=tomcat state=stopped
   - name: Check that war file exist
     stat:
-      path: /usr/share/tomcat/webapps/gameoflife.war
+      path: /home/ubuntu/apache-tomcat-8.5.50/webapps/gameoflife.war
     register: stat_result
 
   - name: Delete the war file, if it exist already
     file:
-      path: /usr/share/tomcat/webapps/gameoflife.war
+      path: /home/ubuntu/apache-tomcat-8.5.50/webapps/gameoflife.war
       state: absent
     when: stat_result.stat.exists == True
   - name: Check that GAMEOFLIFE dir exist
     stat:
-      path: /usr/share/tomcat/webapps/gameoflife
+      path: /home/ubuntu/apache-tomcat-8.5.50/webapps/gameoflife
     register: stat_result
   - name: Delete the GAMEOFLIFE dir, if it exist already
     file:
-      path: /usr/share/tomcat/webapps/gameoflife
+      path: /home/ubuntu/apache-tomcat-8.5.50/webapps/gameoflife
       state: absent
     when: stat_result.stat.exists == True
   - name: Deploy War File
