@@ -41,7 +41,7 @@ stages {
       
      }
  }
- stage('Sonarqube') {
+ stage('sonarqube') {
     environment {
         def scannerHome = tool 'sonarqube';
     }
