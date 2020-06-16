@@ -12,7 +12,7 @@ stages {
 
       // Get some code from a GitHub repository
 
-     git 'https://github.com/varma555/game-of-life.git'
+    git 'https://github.com/varma555/game-of-life.git'
 
       // Get the Maven tool.
      
@@ -54,16 +54,16 @@ stages {
         //}
     }
  }
-    stage('Artifact upload') {
-      steps {
-  nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'devops', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'gameoflife', groupId: 'com.wakaleo.gameoflife', packaging: 'war', version: '$BUILD_ID']]]     
-     }
-     }
-   stage('Deploy War') {
-      steps {
-        sh label: '', script: 'ansible-playbook deploy.yml'
-      }
- }
+    //stage('Artifact upload') {
+      //steps {
+  //nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'devops', packages: [[$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: 'gameoflife', groupId: 'com.wakaleo.gameoflife', packaging: 'war', version: '$BUILD_ID']]]     
+    // }
+     //}
+   //stage('Deploy War') {
+     // steps {
+       // sh label: '', script: 'ansible-playbook deploy.yml'
+    //  }
+ //}
 
 //post {
 //       success {
